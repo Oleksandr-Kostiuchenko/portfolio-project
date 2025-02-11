@@ -4,15 +4,110 @@
     <meta charset="UTF-8" />
     <link rel="icon" href="./img/favicon.png" type="image/x-icon" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio project</title>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <h1>Hello.
-    I’m Fullstack developer
-    Lloyd Jefferson.</h1>
+    <header class="page-header">
+      <div class="container header-container">
+        <div class="logo-wrapper">
+          <img class="header-logo" srcset="./img/header/fotoheader@2x.webp 2x" src="./img/header/fotoheader.webp"
+            alt="jefferson image">
+          <span class="header-name">*jefferson</span>
+        </div>
+        
+        <h2 class="menu-title">Menu</h2>
+        <nav class="header-nav">
+          <ul class="header-nav-list">
+            <li class="nav-item">
+              <a href="" class="nav-link">About me</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link">Benefits</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link">FAQ</a>
+            </li>
+          </ul>
+        </nav>
+        
+        <a href="" class="header-order-link">Order the project</a>
+        
+        <button class="menu-burger-btn" type="button">
+          <svg width="28" height="28" class="burger-btn-icon">
+            <use href="./img/sprite.svg#icon-burger"></use>
+          </svg>
+        </button>
+      </div>
 
+      <!-- Mobile menu -->
+      <div class="menu-backdrop">
+        <div class="container mobile-menu-container">
+          <button class="mobile-menu-close-btn">
+            <svg width="28" height="28" class="burger-btn-icon">
+              <use href="./img/sprite.svg#icon-close"></use>
+            </svg>
+          </button>
+
+          <nav class="header-mobile-nav">
+            <ul class="mobile-nav-list">
+              <li class="mobile-nav-item">
+                <a href="" class="mobile-nav-link">About me</a>
+              </li>
+              <li class="mobile-nav-item">
+                <a href="" class="mobile-nav-link">Benefits</a>
+              </li>
+              <li class="mobile-nav-item">
+                <a href="" class="mobile-nav-link">Projects</a>
+              </li>
+              <li class="mobile-nav-item">
+                <a href="" class="mobile-nav-link">FAQ</a>
+              </li>
+            </ul>
+          </nav>
+
+          <a href="" class="mobile-header-order-link">Order the project</a>
+        </div>
+      </div>
+    </header>
+    
+    <main>
+      <section class="hero-section">
+        <div class="container hero-container">
+          <h1 class="page-title">Hello. <br>
+          I’m Fullstack developer
+          Lloyd Jefferson.</h1>
+
+          <ul class="hero-contact-list">
+            <li class="hero-contact-list-item">
+              <a href="https://www.instagram.com/goitclub/" class="hero-link">IG</a>
+            </li>
+            <li class="hero-contact-list-item">
+              <a href="https://www.facebook.com/goITclub/" class="hero-link">FB</a>
+            </li>
+            <li class="hero-contact-list-item">
+              <a href="https://www.youtube.com/c/GoIT" class="hero-link">YT</a>
+            </li>
+            <li class="hero-contact-list-item">
+              <a href="https://github.com/Oleksandr-Kostiuchenko/portfolio-project" class="hero-link">GH</a>
+            </li>
+            <li class="hero-contact-list-item">
+              <a href="mailto:aleksandrkostucenko11@gmail.com" class="hero-link">lloydjefferson@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
     <script type="module" src="./main.js"></script>
   </body>
 </html>
