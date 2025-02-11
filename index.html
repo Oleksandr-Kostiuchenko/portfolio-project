@@ -2,16 +2,112 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="/portfolio-project/assets/favicon-KycpX_pk.png" type="image/x-icon" />
+    <link rel="icon" href="/portfolio-project/assets/favicon-DneTwykY.png" type="image/x-icon" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio project</title>
     <script type="module" crossorigin src="/portfolio-project/index.js"></script>
+    <link rel="stylesheet" crossorigin href="/portfolio-project/assets/index-Dm9VKNqP.css">
   </head>
   <body>
-    <h1>Hello.
-    I’m Fullstack developer
-    Lloyd Jefferson.</h1>
+    <header class="page-header">
+      <div class="container header-container">
+        <div class="logo-wrapper">
+          <img class="header-logo" srcset="data:image/webp;base64,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 2x" src="data:image/webp;base64,UklGRqgEAABXRUJQVlA4WAoAAAAQAAAATwAATwAAQUxQSM0AAAABf0AgQMECPeD/TiMiIkVcl/GAW23bsubBXUo2oLKOMZjAepcBZBAOC2hFTeUaT6pvhLjn+3H5nj7nRPR/ArC3+KCtzvzY8OPY7kpp+ojrleLMgepKuW9P+E+d0O9crQgDALySYaEDKitKK/DBEQUkh0ByRWrusTheWUKfLOUflvofi9BYHlf/Lmssj5Jl8c3S/mQpv7KEOizOJIsZkkMAbxw5oMJhBbx/DEIH4IohAABhqW6h30FVnQ/7b1XFcLivJoVjS2PtXI+1CPYCAFZQOCC0AwAAEBEAnQEqUABQAD6RQJtKJaOiIaZ2a5iwEgljAMzx25J2+cyGt/+Wjwg0nE0PyDag3SqYoV/neLN6Yxxk5vZVV/AhWfLZpBsABERsmKgqgN1E/KULPnJsFd58/eiPvj7m/Hn6eysVTXsPZ9eaw+g1LXymZ4NnkUU4iM1qrwAXF4J9Q6laOMkArDX7I0JCzx2zgAD++UZhxRmhD7+vkIYnlwX0GIXarY4oGyXCoTTwLSgFfFB3y1vKb1hnRsmuUjX1XZSzjZsLiYofqDhtpry+Tl/xkdMrD5D+nkBQ6uxXkWW6SmplymJJFaheSIYdH1L9n9YYWCz+mREAFVkuEIvhUv8ogpE51yjxr8jLhta6TwUBX7dmzpOSDA6NSopVA6OYCtSK9n9UTuUTSxnhBTmyOaNA+eatJEsdh5P+6LJn8mQr00eD21lFZ9bCCwLiU10kFG2sSCKkpwSb5BuFoAVcNLvqfBG7MHQ3RQi3iwigRe/IEy8i8bW4wo8kmn44imr/wzvppA+drnVjhuqRPRXoHiqk0GI/FR5AOglXDQQvK/CuzbboomCxEIhbIUpZ5PwuCmXZbxwz30f4ovbz7TzztN6OzmNwwamZ8hw5YXyElx6IS2QxbfUw+AclWNIUkfUZHllr26ARKJDIGrBgj/2ZBNzC3Dj2vhqPHtM+ckZW1pdHEOaTlk3w52Lm6dg9gBNwwzFtQa43tvWWGB1gn5PBi6TDx03FEl6vyUIwhLkDZGLc8AzUTYnOskFE+9Dh2+2Qt0czwe2LPOX0/87GRx0tZtwVpPumK7ksnOvuU+oLAbZ8PMz1s+5QK7iH0YgeFqeTroqRYE5Str3TZw5SYLvJR5TgDNvvthkHeIHfBCtHn0DzBZbim0vGqLNhr6odyr0MEUxG/fnKzAiMNe4tss7KYHPj1Rham9MrkcBT91L/GEyHmgUrJsKI/PRQXAjqSVdX76bNND3jy9UBWLkmJ8xUINXVLAaR+FAfYSPGZN6oUwfeUYMrXFyCd/YajMJ4qJeXsNiyHPO4NEv7Kg/J6mC5OmMY2T+8pdE2NVxtRzZqoU5g+uR9+WOwBW4wd8SrUHbBo8e1r/55fO0oC6iK/55rtP0dmymQq4/vzQZVobFeq6UM7Q97x/WnmmF9bNrTEqlC6EsKv9bZeD4ssTtB8W7pL1bdHoilLM/izn4Quf0Stl1j3bjIPNu7FLCJcaQatSxTs5rRGR7gkddwAuL1g4iDTi2X/eozCj/5k9xsAQ9cxQssAAAA"
+            alt="jefferson image">
+          <span class="header-name">*jefferson</span>
+        </div>
+        
+        <h2 class="menu-title">Menu</h2>
+        <nav class="header-nav">
+          <ul class="header-nav-list">
+            <li class="nav-item">
+              <a href="" class="nav-link">About me</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link">Benefits</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link">FAQ</a>
+            </li>
+          </ul>
+        </nav>
+        
+        <a href="" class="header-order-link">Order the project</a>
+        
+        <button class="menu-burger-btn" type="button">
+          <svg width="28" height="28" class="burger-btn-icon">
+            <use href="/portfolio-project/assets/sprite-Ri2QJPrX.svg#icon-burger"></use>
+          </svg>
+        </button>
+      </div>
 
+      <!-- Mobile menu -->
+      <div class="menu-backdrop">
+        <div class="container mobile-menu-container">
+          <button class="mobile-menu-close-btn">
+            <svg width="28" height="28" class="burger-btn-icon">
+              <use href="/portfolio-project/assets/sprite-Ri2QJPrX.svg#icon-close"></use>
+            </svg>
+          </button>
+
+          <nav class="header-mobile-nav">
+            <ul class="mobile-nav-list">
+              <li class="mobile-nav-item">
+                <a href="" class="mobile-nav-link">About me</a>
+              </li>
+              <li class="mobile-nav-item">
+                <a href="" class="mobile-nav-link">Benefits</a>
+              </li>
+              <li class="mobile-nav-item">
+                <a href="" class="mobile-nav-link">Projects</a>
+              </li>
+              <li class="mobile-nav-item">
+                <a href="" class="mobile-nav-link">FAQ</a>
+              </li>
+            </ul>
+          </nav>
+
+          <a href="" class="mobile-header-order-link">Order the project</a>
+        </div>
+      </div>
+    </header>
+    
+    <main>
+      <section class="hero-section">
+        <div class="container hero-container">
+          <h1 class="page-title">Hello. <br>
+          I’m Fullstack developer
+          Lloyd Jefferson.</h1>
+
+          <ul class="hero-contact-list">
+            <li class="hero-contact-list-item">
+              <a href="https://www.instagram.com/goitclub/" class="hero-link">IG</a>
+            </li>
+            <li class="hero-contact-list-item">
+              <a href="https://www.facebook.com/goITclub/" class="hero-link">FB</a>
+            </li>
+            <li class="hero-contact-list-item">
+              <a href="https://www.youtube.com/c/GoIT" class="hero-link">YT</a>
+            </li>
+            <li class="hero-contact-list-item">
+              <a href="https://github.com/Oleksandr-Kostiuchenko/portfolio-project" class="hero-link">GH</a>
+            </li>
+            <li class="hero-contact-list-item">
+              <a href="mailto:aleksandrkostucenko11@gmail.com" class="hero-link">lloydjefferson@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
