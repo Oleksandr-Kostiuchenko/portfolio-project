@@ -10,6 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet" />
 
+    <script src="https://unpkg.com/accordion-js@3.4.0/dist/accordion.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio project</title>
     <link rel="stylesheet" href="./css/styles.css" />
@@ -85,27 +88,165 @@
       <section class="hero-section">
         <div class="container hero-container">
           <h1 class="page-title">Hello. <br>
-          I’m Fullstack developer
+          I’m Fullstack developer 
           Lloyd Jefferson.</h1>
 
           <ul class="hero-contact-list">
             <li class="hero-contact-list-item">
-              <a href="https://www.instagram.com/goitclub/" class="hero-link">IG</a>
+              <a href="https://www.instagram.com/goitclub/" class="hero-link" target="_blank">IG</a>
             </li>
             <li class="hero-contact-list-item">
-              <a href="https://www.facebook.com/goITclub/" class="hero-link">FB</a>
+              <a href="https://www.facebook.com/goITclub/" class="hero-link" target="_blank">FB</a>
             </li>
             <li class="hero-contact-list-item">
-              <a href="https://www.youtube.com/c/GoIT" class="hero-link">YT</a>
+              <a href="https://www.youtube.com/c/GoIT" class="hero-link" target="_blank">YT</a>
             </li>
             <li class="hero-contact-list-item">
-              <a href="https://github.com/Oleksandr-Kostiuchenko/portfolio-project" class="hero-link">GH</a>
+              <a href="https://github.com/Oleksandr-Kostiuchenko/portfolio-project" class="hero-link" target="_blank">GH</a>
             </li>
             <li class="hero-contact-list-item">
-              <a href="mailto:aleksandrkostucenko11@gmail.com" class="hero-link">lloydjefferson@gmail.com</a>
+              <a href="mailto:aleksandrkostucenko11@gmail.com" class="hero-link" target="_blank">lloydjefferson@gmail.com</a>
             </li>
           </ul>
         </div>
+      </section>
+
+      <section class="about-me-section">
+        <div class="container about-conatiner">
+          <h2 class="about-me-title visually-hidden">About me</h2>
+
+          <div class="about-me-info-wrapper">
+            <div class="about-text-wrapper">
+              <p class="about-text">
+                I work with people all over the world to create impressive and <span class="red-accent">functional</span> <span class="grey-accent">websites</span> that reflect each client's unique
+                personality.
+              </p>
+            </div>
+
+            <picture>
+              <source 
+              media="(min-width:1440px)"
+              srcset="
+                /img/aboutme/aboutmedeck.webp    1x,
+                /img/aboutme/aboutmedeck@2x.webp 2x,
+                /img/aboutme/aboutmedeck@3x.webp 3x
+              "
+              >
+
+              <source 
+              media="(min-width:768px)"
+              srcset="
+                /img/aboutme/aboutmetab.webp    1x,
+                /img/aboutme/aboutmetab@2x.webp 2x,
+                /img/aboutme/aboutmetab@3x.webp 3x
+              "
+              >
+
+              <source
+              media="(max-width:768px)"
+              srcset="
+                /img/aboutme/aboutmemob.webp    1x,
+                /img/aboutme/aboutmemob@2x.webp 2x,
+                /img/aboutme/aboutmemob@3x.webp 3x
+              "
+              />
+
+              <img src="../img/aboutme/aboutmemob.webp" alt="Jefferson photo" class="about-me-img" 
+                width="343"
+                height="500"
+                loading="lazy">
+            </picture>
+          </div>
+
+          <ul class="about-accordion-list about-me-accordion-container">
+            <li class="accordion-item ac">
+              <div class="accordion-upper">
+                <h3 class="ac-header">About me</h3>
+                <button type="button" class="ac-trigger rotated-arrow">
+                  <svg class="about-me-svgbutton-arrow" width="11" height="11">
+                    <use href="./img/sprite.svg#icon-infoopen"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="ac-panel">
+                <p class="ac-text first-text-about">I am Lloyd Jefferson, a talented programmer with extensive expertise in software development. I have an understanding of
+                different programming languages ​​and technologies, always ready to improve my skills. I always follow the latest trends
+                and look for unconventional, creative solutions to problems. I have a high level of analytical skills and am able to
+                effectively solve even the most difficult tasks encountered on the way.</p>
+
+                <p class="ac-text">Able to work both independently and in a team. I can effectively cooperate with colleagues, exchanging ideas and finding
+                optimal solutions. Professional maturity allows you to calmly cope with challenges and stressful situations, while
+                maintaining a high quality of work. I am always looking for opportunities for self-improvement. I actively study new
+                technologies and practices to stay abreast of the latest innovations. I have a strong understanding of various
+                programming languages, frameworks and architectural concepts that allow me to create efficient and scalable software.</p>
+              </div>
+            </li>
+            <li class="accordion-item ac">
+              <div class="accordion-upper">
+                <h3 class="ac-header">Role</h3>
+                <button type="button" class="ac-trigger">
+                  <svg class="about-me-svgbutton-arrow" width="11" height="11">
+                    <use href="./img/sprite.svg#icon-infoopen"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="ac-panel">
+                <ul class="role-list ac-text">
+                  <li class="role-item">Frontend development</li>
+                  <li class="role-item">HeadlessCMS,Wordpress</li>
+                  <li class="role-item">Blender(enjoy)</li>
+                </ul>
+              </div>
+            </li>
+            <li class="accordion-item ac">
+              <div class="accordion-upper">
+                <h3 class="ac-header">Education</h3>
+                <button type="button" class="ac-trigger">
+                  <svg class="about-me-svgbutton-arrow" width="11" height="11">
+                    <use href="./img/sprite.svg#icon-infoopen"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="ac-panel">
+                <ul class="education-list ac-text">
+                  <li class="education-item">2018 - 2019 / Frontend Development Diploma, GoIT IT <br> School, New York</li>
+                  <li class="education-item">2018 - 2019 / Frontend Development Diploma, GoIT IT <br> School, New York</li>
+                  <li class="education-item">2020 - 2022 / Advanced Blender Animation Techniques, <br> Udemy</li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+
+
+          <div class="swiper-about-div">
+            <div class="swiper-container">
+              <ul class="swiper-wrapper skills-list">
+                <li class="skills-item swiper-slide">HTML/CSS</li>
+                <li class="skills-item swiper-slide">JavaScript</li>
+                <li class="skills-item swiper-slide">React</li>
+                <li class="skills-item swiper-slide">Node.js</li>
+                <li class="skills-item swiper-slide">React Native</li>
+                <li class="skills-item swiper-slide">Soft Skills</li>
+                <li class="skills-item swiper-slide">HTML/CSS</li>
+                <li class="skills-item swiper-slide">JavaScript</li>
+                <li class="skills-item swiper-slide">React</li>
+                <li class="skills-item swiper-slide">Node.js</li>
+                <li class="skills-item swiper-slide">React Native</li>
+                <li class="skills-item swiper-slide">Soft Skills</li>
+              </ul>
+
+              <div class="swiper-about-button-wrapper">
+                <button class="about-swipper-btn" type="button">
+                  <svg class="about-swipper-svg" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.66699 14H23.3337" stroke="#3B3B3B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M16.333 7L23.333 14L16.333 21" stroke="#3B3B3B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+      </div>
       </section>
     </main>
     <script type="module" src="./main.js"></script>

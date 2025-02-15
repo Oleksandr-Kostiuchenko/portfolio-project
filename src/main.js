@@ -26,5 +26,72 @@ const onCloseMenuClick = event => {
     backdropEl.classList.remove('is-open');
     burgerIcon.classList.remove('rotated');
 } 
-
 //TODO: ================== /HEADER ==================
+
+
+//TODO: ================== ABOUT-ME ==================
+//* Import library
+import Accordion from "accordion-js";
+import Swiper from 'swiper/bundle';
+
+//* Find elements
+const arrowBtnEl = document.querySelectorAll('.ac-trigger');
+
+document.addEventListener("DOMContentLoaded", function () {
+    new Accordion(".about-accordion-list", {
+        duration: 300,
+        showMultiple: true,
+        openOnInit: [0]
+    });
+});
+
+document.addEventListener("DOMContentLoaded", event => {
+    arrowBtnEl.forEach(el => {
+        el.addEventListener('click', event => {
+            el.classList.toggle('rotated-arrow');
+        })
+    })
+})
+
+document.addEventListener("DOMContentLoaded", event => {
+    const updateSlider = swiperArr => {
+        swiperArr.slides.forEach(el => {
+            el.classList.remove('selected-skill');
+        })
+
+        if (swiperArr.slides[swiperArr.activeIndex]) {
+            swiperArr.slides[swiperArr.activeIndex].classList.add('selected-skill');
+        }
+    }
+
+    const swiper = new Swiper('.swiper-container', {
+        direction: 'horizontal',
+        loop: true,
+        slidesPerView: 2,
+        breakpoints: {
+            768: {
+                slidesPerView: 3,
+            },
+            1440: {
+                slidesPerView: 6,
+            },
+        },
+        navigation: {
+            nextEl: '.swiper-about-button-wrapper',
+        },
+        keyboard: {
+            enabled: true,
+            onlyInViewport: true,
+        },
+        on: {
+            init: function () {
+                updateSlider(this);
+            },
+            slideChangeTransitionEnd: function () {
+                updateSlider(this);
+            }
+        },
+    });
+});
+
+//TODO: ================== /ABOUT-ME ==================
