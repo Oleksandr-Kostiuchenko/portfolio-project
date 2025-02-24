@@ -97,57 +97,67 @@ document.addEventListener('DOMContentLoaded', event => {
 
 //TODO: ================== PROJECTS ==================
 document.addEventListener('DOMContentLoaded', event => {
-    const projectSwiperContainer = document.querySelector('.swiper-projects-container');
-    const nextButton = document.querySelector('.swiper-button-next-project');
-    const prevButton = document.querySelector('.swiper-button-prev-project');
-  
-    const updateProjectButtons = swiperArr => {
-      nextButton.classList.remove('disabled-projects-btn');
-      prevButton.classList.remove('disabled-projects-btn');
+  const projectSwiperContainer = document.querySelector(
+    '.swiper-projects-container'
+  );
+  const nextButton = document.querySelector('.swiper-button-next-project');
+  const prevButton = document.querySelector('.swiper-button-prev-project');
 
-      if (swiperArr.activeIndex === 0) {
-        prevButton.classList.add('disabled-projects-btn');
-      }
+  const updateProjectButtons = swiperArr => {
+    nextButton.classList.remove('disabled-projects-btn');
+    prevButton.classList.remove('disabled-projects-btn');
 
-      if (swiperArr.activeIndex === 2) {
-        nextButton.classList.add('disabled-projects-btn');
-      }
+    if (swiperArr.activeIndex === 0) {
+      prevButton.classList.add('disabled-projects-btn');
     }
 
-    if (projectSwiperContainer && nextButton && prevButton) {
-        const ProjectSwiper = new Swiper(projectSwiperContainer, {
-            direction: 'horizontal',
-            loop: false,
-            spaceBetween: 30,
-              breakpoints: {
-                768: {
-                  spaceBetween: 70,
-                },
-                1440: {
-                  spaceBetween: 67,
-                },
-              },
-            slidesPerView: 1,
-            navigation: {
-                nextEl: nextButton,
-                prevEl: prevButton,
-            },
-            keyboard: {
-                enabled: true,
-                onlyInViewport: true,
-            },
-            on: {
-              init: function () {
-                updateProjectButtons(this);
-              },
-              slideChangeTransitionEnd: function () {
-                updateProjectButtons(this);
-              },
-            },
-        });
-    } else {
-        console.error('Swiper elements not found in the DOM');
+    if (swiperArr.activeIndex === 2) {
+      nextButton.classList.add('disabled-projects-btn');
     }
+  };
+
+  if (projectSwiperContainer && nextButton && prevButton) {
+    const ProjectSwiper = new Swiper(projectSwiperContainer, {
+      direction: 'horizontal',
+      loop: false,
+      spaceBetween: 1000,
+      slidesPerView: 1,
+      navigation: {
+        nextEl: nextButton,
+        prevEl: prevButton,
+      },
+      keyboard: {
+        enabled: true,
+        onlyInViewport: true,
+      },
+      on: {
+        init: function () {
+          updateProjectButtons(this);
+        },
+        slideChangeTransitionEnd: function () {
+          updateProjectButtons(this);
+        },
+      },
+    });
+  } else {
+    console.error('Swiper elements not found in the DOM');
+  }
+});
+//TODO: ================== /PROJECTS ==================
+
+//TODO: ================== FAQ ==================
+window.addEventListener('DOMContentLoaded', evemt => {
+  new Accordion('.faq-list-accordion', {
+    duration: 300,
+    showMultiple: false,
+    openOnInit: [],
+  });
+
+  new Accordion('.faq-list-accordion-second', {
+    duration: 300,
+    showMultiple: false,
+    openOnInit: [],
+  });
 });
 
-//TODO: ================== /PROJECTS ==================
+//TODO: ================== FAQ ==================

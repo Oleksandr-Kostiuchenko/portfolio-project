@@ -591,6 +591,7 @@ header {
 
   width: 36px;
   height: 36px;
+  flex-shrink: 0;
 }
 
 .ac-trigger {
@@ -690,9 +691,6 @@ header {
   border: none;
 }
 
-.swiper-slide {
-}
-
 .swiper-about-button-wrapper {
   position: absolute;
   top: 50%;
@@ -757,15 +755,6 @@ header {
 
 /* ================= BENEFITS ================= */
 /* Mobile */
-.benefits-section {
-}
-
-.container {
-}
-
-.benefits-container {
-}
-
 .benefits-title {
   font-weight: 600;
   font-size: 16px;
@@ -812,9 +801,6 @@ header {
   width: 24px;
   height: 24px;
   fill: none;
-}
-
-.benefit-wrapper {
 }
 
 .benefit-title {
@@ -996,14 +982,15 @@ header {
   display: flex;
 }
 
-.swiper-button-prev-project, .swiper-button-next-project {
+.swiper-button-prev-project,
+.swiper-button-next-project {
   width: 52px;
   height: 52px;
 
   transition: border 250ms linear, opacity 250ms linear;
 }
 
-.projects-buttons-wrapper{
+.projects-buttons-wrapper {
   display: flex;
   gap: 12px;
 
@@ -1011,7 +998,8 @@ header {
   margin-right: auto;
 }
 
-.projects-swiper-button-prev, .projects-swiper-button-next {
+.projects-swiper-button-prev,
+.projects-swiper-button-next {
   background-color: transparent;
   border: none;
   outline: none;
@@ -1027,17 +1015,17 @@ header {
   justify-content: center;
 }
 
-.projects-swiper-button-prev{
+.projects-swiper-button-prev {
   transform: rotate(-180deg);
 }
 
-.projects-swiper-left, .projects-swiper-right {
+.projects-swiper-left,
+.projects-swiper-right {
   width: 24px;
   height: 24px;
 }
 
-
-.disabled-projects-btn{
+.disabled-projects-btn {
   opacity: 0.5;
   pointer-events: none;
 }
@@ -1052,16 +1040,222 @@ header {
     height: 1191px;
   }
 
+  .project-description-wrapper {
+    background-color: #ffffff;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    padding: 64px;
+  }
 
+  .project-tech-list {
+    width: 312px;
+    flex-wrap: nowrap;
+    gap: 6px;
+
+    margin-bottom: 164px;
+  }
+
+  .project-title {
+    font-weight: 500;
+    font-size: 44px;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: #1c1d20;
+  }
+
+  .project-img-wrapper {
+    height: 704px;
+    background-color: #242527;
+
+    padding-left: 45px;
+    padding-right: 45px;
+
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+
+  .projects-list {
+    margin-bottom: 64px;
+  }
 }
 
+/* Swiper Laptop */
+@media screen and (min-width: 1440px) {
+  .project-item {
+    display: flex;
+    flex-direction: row;
 
+    min-width: 1376px;
+    height: 625px;
+  }
 
+  .project-img-wrapper {
+    max-height: 625px;
+    border-radius: 0;
+    border-bottom-right-radius: 24px;
+    border-top-right-radius: 24px;
+  }
 
+  .project-description-wrapper {
+    background-color: #ffffff;
+    border-radius: 0;
+    border-bottom-left-radius: 24px;
+    border-top-left-radius: 24px;
+    padding: 64px;
 
+    width: 688px;
 
+    display: flex;
+    flex-direction: column;
+  }
 
+  .project-img-wrapper {
+    max-width: 688px;
+  }
 
+  .project-tech-list {
+    width: 312px;
+    flex-wrap: nowrap;
+    gap: 6px;
 
+    margin-bottom: auto;
+  }
 
+  .project-title {
+    font-weight: 500;
+    font-size: 44px;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: #1c1d20;
+    max-width: 494px;
+  }
+
+  .project-img-wrapper {
+    height: 704px;
+    background-color: #242527;
+
+    padding-left: 45px;
+    padding-right: 45px;
+
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+
+  .projects-list {
+    margin-bottom: 64px;
+  }
+
+  .project-link {
+    width: 177px;
+    height: 55px;
+  }
+}
 /* ================= /PROJECTS ================= */
+
+/* ================= FAQ ================= */
+.accordion-container-faq {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.faq-title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: rgba(250, 250, 250, 0.4);
+
+  margin-bottom: 32px;
+}
+
+.faq-list-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.faq-header {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: #fafafa;
+
+  text-transform: none;
+  width: 265px;
+}
+
+.faq-text-accordion {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: rgba(250, 250, 250, 0.6);
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+  .accordion-container-faq {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .faq-header {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    color: #fafafa;
+
+    text-transform: none;
+    width: 574px;
+  }
+
+  .faq-text-accordion {
+    width: 656px;
+    margin: 0;
+  }
+
+  .last-title-faq {
+    width: 485px;
+  }
+}
+
+/* Laptop */
+@media screen and (min-width: 1440px) {
+  .accordion-container-faq {
+    max-height: 332px;
+    width: 1376px;
+
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .faq-list-accordion {
+    width: 100%;
+    min-height: 332px;
+    gap: 0;
+  }
+
+  .faq-list-accordion-first .section-faq-item {
+    padding-top: 32px;
+    padding-right: 32px;
+
+    border-top: 1px solid rgba(250, 250, 250, 0.2);
+    border-right: 1px solid rgba(250, 250, 250, 0.2);
+  }
+
+  .faq-list-accordion-second .section-faq-item {
+    padding-top: 32px;
+    padding-left: 32px;
+
+    border-top: 1px solid rgba(250, 250, 250, 0.2);
+    border-left: 1px solid rgba(250, 250, 250, 0.2);
+  }
+
+  .faq-list-accordion-first .section-faq-item:last-child {
+    padding-bottom: 45px;
+  }
+}
+/* ================= /FAQ ================= */
