@@ -164,4 +164,41 @@ window.addEventListener('DOMContentLoaded', evemt => {
 
 //TODO: ================== COVERS ==================
 // https://stackoverflow.com/questions/68441473/how-can-i-trigger-this-animation-to-start-once-in-viewport
+document.addEventListener('DOMContentLoaded', () => {
+  const coverSectionEl = document.querySelector('.covers-section');
+  const marquesListElements = document.querySelectorAll('.marque-line');
+
+  const isInViewport = item => {
+    const bounding = item.getBoundingClientRect(),
+      myElementHeight = item.offsetHeight,
+      myElementWidth = item.offsetWidth;
+
+    if (
+      bounding.top >= -myElementHeight &&
+      bounding.left >= -myElementWidth &&
+      bounding.right <=
+        (window.innerWidth || document.documentElement.clientWidth) +
+          myElementWidth &&
+      bounding.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) +
+          myElementHeight
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  const checkVisibility = () => {
+    marquesListElements.forEach(element => {
+      element.style.animationPlayState = isInViewport(coverSectionEl)
+        ? 'running'
+        : 'paused';
+    });
+  };
+
+  window.addEventListener('scroll', checkVisibility);
+  window.addEventListener('resize', checkVisibility);
+  checkVisibility();
+});
 //TODO: ================== COVERS ==================
