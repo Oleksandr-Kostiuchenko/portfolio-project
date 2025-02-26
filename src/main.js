@@ -161,3 +161,7 @@ window.addEventListener('DOMContentLoaded', evemt => {
 });
 
 //TODO: ================== FAQ ==================
+
+//TODO: ================== COVERS ==================
+// https://stackoverflow.com/questions/68441473/how-can-i-trigger-this-animation-to-start-once-in-viewport
+//TODO: ================== COVERS ==================

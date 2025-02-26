@@ -1259,3 +1259,103 @@ header {
   }
 }
 /* ================= /FAQ ================= */
+
+/* ================= COVERS ================= */
+.content {
+  position: relative;
+  margin: 0 auto;
+  height: 508px;
+  max-height: 508px;
+  overflow: hidden;
+}
+
+.covers-container {
+  margin: 0 auto;
+  background-color: rgba(217, 217, 217, 0.04);
+  backdrop-filter: blur(30px);
+  background-image: url(../img/covers/elemvectors.webp);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.marque {
+  position: absolute;
+  right: -800px;
+  left: 0;
+  overflow: hidden;
+  font-family: 'Pridi', sans-serif;
+  font-weight: 600;
+  font-size: 34px;
+  text-transform: uppercase;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+}
+
+.marque-inner {
+  display: flex;
+  gap: 20px;
+  transform: rotate(16deg);
+}
+
+.marque-line {
+  flex-shrink: 0;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 282px;
+  height: 162px;
+  white-space: nowrap;
+  animation-name: marqueeLine;
+  animation-duration: 60s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes marqueeLine {
+  from {
+    transform: translateX(-20%);
+  }
+
+  to {
+    transform: translateX(-990%);
+  }
+}
+
+.marquee__img {
+  width: 282px;
+  height: 162px;
+}
+
+@media screen and (min-width: 768px) {
+  .content {
+    position: relative;
+    margin: 0 auto;
+    height: 960px;
+    max-height: 960px;
+    overflow: hidden;
+  }
+
+  .marque-line {
+    width: 544px;
+    height: 314px;
+  }
+
+  .marquee__img {
+    width: 544px;
+    height: 314px;
+  }
+
+  .marque {
+    row-gap: 50px;
+  }
+
+  .marque-inner {
+    gap: 35px;
+  }
+}
+
+/* ================= /COVERS ================= */
