@@ -1359,3 +1359,57 @@ header {
 }
 
 /* ================= /COVERS ================= */
+
+/* ================= REVIEWS ================= */
+.reviews-title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: rgba(250, 250, 250, 0.4);
+  text-transform: uppercase;
+
+  margin-bottom: 32px;
+}
+
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.reviews-item {
+  width: 343px;
+  height: 302px;
+  padding: 32px 24px;
+
+  border: 1px solid rgba(250, 250, 250, 0.2);
+  border-radius: 20px;
+
+  scrollbar-width: none;
+  overflow-y: auto;
+}
+
+.reviews-item::-webkit-scrollbar {
+  display: none;
+}
+
+.reviews-person-img {
+  border-radius: 10px;
+  margin-bottom: 32px;
+}
+
+.reviews-person-name {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: #fafafa;
+
+  margin-bottom: 8px;
+}
+.reviews-person-message {
+  letter-spacing: -0.02em;
+  color: rgba(250, 250, 250, 0.6);
+}
+/* ================= REVIEWS ================= */

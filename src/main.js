@@ -163,7 +163,6 @@ window.addEventListener('DOMContentLoaded', evemt => {
 //TODO: ================== FAQ ==================
 
 //TODO: ================== COVERS ==================
-// https://stackoverflow.com/questions/68441473/how-can-i-trigger-this-animation-to-start-once-in-viewport
 document.addEventListener('DOMContentLoaded', () => {
   const coverSectionEl = document.querySelector('.covers-section');
   const marquesListElements = document.querySelectorAll('.marque-line');
@@ -202,3 +201,77 @@ document.addEventListener('DOMContentLoaded', () => {
   checkVisibility();
 });
 //TODO: ================== COVERS ==================
+
+//TODO: ================== REVIEWS ==================
+//* Import libraries
+import axios from 'axios';
+
+//* Find elements
+const reviewsListEl = document.querySelector('.reviews-list');
+
+//* Query function
+const getReviews = async () => {
+  const getRequestArr = await axios.get(
+    'https://portfolio-js.b.goit.study/api/reviews'
+  );
+
+  const reviewsHTML = [];
+  getRequestArr.data.forEach(element => {
+    reviewsHTML.push(`
+        <li class="reviews-item">
+          <img
+            class="reviews-person-img"
+            src="${element.avatar_url}"
+            alt="person photo"
+            width="48"
+            height="48"
+          />
+
+          <p class="reviews-person-name">${element.author}</p>
+          <p class="reviews-person-message">${element.review}</p>
+        </li>
+        `);
+  });
+
+  reviewsListEl.insertAdjacentHTML('beforeend', reviewsHTML.join(''));
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  const reviewsSectionEL = document.querySelector('.reviews-section');
+  const reviewItem = document.querySelectorAll('.reviews-item');
+
+  const isInViewport = item => {
+    const bounding = item.getBoundingClientRect(),
+      myElementHeight = item.offsetHeight,
+      myElementWidth = item.offsetWidth;
+
+    if (
+      bounding.top >= -myElementHeight &&
+      bounding.left >= -myElementWidth &&
+      bounding.right <=
+        (window.innerWidth || document.documentElement.clientWidth) +
+          myElementWidth &&
+      bounding.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) +
+          myElementHeight
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  const checkVisibility = () => {
+    if (isInViewport(reviewsSectionEL)) {
+      getReviews();
+      window.removeEventListener('scroll', checkVisibility);
+      window.removeEventListener('resize', checkVisibility);
+      return;
+    }
+  };
+
+  window.addEventListener('scroll', checkVisibility);
+  window.addEventListener('resize', checkVisibility);
+  checkVisibility();
+});
+//TODO: ================== /REVIEWS ==================
