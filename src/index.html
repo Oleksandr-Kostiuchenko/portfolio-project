@@ -53,7 +53,7 @@
           </ul>
         </nav>
 
-        <a href="" class="header-order-link">Order the project</a>
+        <a href="#page-footer" class="header-order-link">Order the project</a>
 
         <button class="menu-burger-btn" type="button">
           <svg width="28" height="28" class="burger-btn-icon">
@@ -88,7 +88,9 @@
             </ul>
           </nav>
 
-          <a href="" class="mobile-header-order-link">Order the project</a>
+          <a href="#page-footer" class="mobile-header-order-link"
+            >Order the project</a
+          >
         </div>
       </div>
     </header>
@@ -398,7 +400,7 @@
               </li>
             </ul>
 
-            <a href="" class="benefits-button">Order the project</a>
+            <a href="#page-footer" class="benefits-button">Order the project</a>
           </div>
         </div>
       </section>
@@ -1841,10 +1843,109 @@
         <div class="container reviews-container">
           <h2 class="reviews-title">Reviews</h2>
 
-          <ul class="reviews-list"></ul>
+          <div class="reviews-swiper">
+            <ul class="reviews-list swiper-wrapper"></ul>
+          </div>
+
+          <div class="projects-buttons-wrapper">
+            <div class="swiper-button-prev-review">
+              <button class="projects-swiper-button-prev">
+                <svg class="projects-swiper-left" width="52" height="52">
+                  <use href="/img/sprite.svg#icon-swiperrigth"></use>
+                </svg>
+              </button>
+            </div>
+            <div class="swiper-button-next-review">
+              <button class="projects-swiper-button-next">
+                <svg class="projects-swiper-right" width="52" height="52">
+                  <use href="/img/sprite.svg#icon-swiperrigth"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
       </section>
     </main>
+
+    <footer id="page-footer" class="page-footer">
+      <div
+        class="container-footer"
+        data-aos="fade-down"
+        data-aos-duration="500"
+        data-aos-once="true"
+      >
+        <h2 class="footer-title">
+          Let's
+          <span class="footer-title-accent"> work </span>
+          together
+        </h2>
+
+        <form class="footer-form" id="project-order">
+          <div>
+            <input
+              type="email"
+              class="footer-input email-input"
+              maxlength="32"
+              id="user-email"
+              name="user-email"
+              placeholder="clients@gmail.com"
+              pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+              required
+              autocomplete="off"
+            />
+            <span class="status-message">Success!</span>
+            <span class="status-message-fail">Invalid email, try again</span>
+          </div>
+
+          <div>
+            <input
+              type="text"
+              class="footer-input comment-input"
+              maxlength="100"
+              id="user-comment"
+              name="user-comment"
+              placeholder="comments"
+              required
+              autocomplete="off"
+              pattern=".*\S.*"
+            />
+          </div>
+
+          <button class="footer-form-submit-btn" type="submit">Send</button>
+        </form>
+
+        <ul class="footer-contact-list">
+          <li class="contact-item">
+            <a
+              class="contact-link email-link"
+              href="mailto:aleksandrkostucenko11@gmail.com"
+              >lloydjefferson@gmail.com</a
+            >
+          </li>
+          <li class="contact-item">
+            <a class="contact-link phone-link" href="tel:+3801111111111"
+              >+380 11 1111 11 11</a
+            >
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <div class="backdrop">
+      <div class="modal-window">
+        <button class="close-modal-button" type="button">
+          <svg class="svg-close-icon" width="22" height="22">
+            <use href="./img/sprite.svg#icon-close"></use>
+          </svg>
+        </button>
+
+        <p class="modal-title">Thank you for your interest in cooperation!</p>
+        <p class="modal-text">
+          The manager will contact you shortly to discuss further details and
+          opportunities for cooperation. Please stay in touch.
+        </p>
+      </div>
+    </div>
 
     <script type="module" src="./main.js"></script>
   </body>

@@ -8,10 +8,13 @@ const closeMenuBtn = document.querySelector('.mobile-menu-close-btn');
 const menuBtn = document.querySelector('.menu-title');
 const headerNavEl = document.querySelector('.header-nav');
 
+const orderProjectBtn = document.querySelector('.mobile-header-order-link');
+
 //* Event listeners
 burgerBtnEL.addEventListener('click', event => {
   burgerIcon.classList.add('rotated');
   backdropEl.classList.add('is-open');
+  orderProjectBtn.addEventListener('click', onCloseMenuClick);
 
   closeMenuBtn.removeEventListener('click', onCloseMenuClick);
   closeMenuBtn.addEventListener('click', onCloseMenuClick);
@@ -25,7 +28,9 @@ menuBtn.addEventListener('click', event => {
 const onCloseMenuClick = event => {
   backdropEl.classList.remove('is-open');
   burgerIcon.classList.remove('rotated');
+  orderProjectBtn.removeEventListener('click', onCloseMenuClick);
 };
+
 //TODO: ================== /HEADER ==================
 
 //TODO: ================== ABOUT-ME ==================
@@ -218,7 +223,7 @@ const getReviews = async () => {
   const reviewsHTML = [];
   getRequestArr.data.forEach(element => {
     reviewsHTML.push(`
-        <li class="reviews-item">
+        <li class="reviews-item swiper-slide">
           <img
             class="reviews-person-img"
             src="${element.avatar_url}"
@@ -274,4 +279,193 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', checkVisibility);
   checkVisibility();
 });
+
+document.addEventListener('DOMContentLoaded', event => {
+  const reviewSwiperContainer = document.querySelector('.reviews-swiper');
+  const nextButton = document.querySelector('.swiper-button-next-review');
+  const prevButton = document.querySelector('.swiper-button-prev-review');
+
+  const updateProjectButtons = swiperArr => {
+    nextButton.classList.remove('disabled-projects-btn');
+    prevButton.classList.remove('disabled-projects-btn');
+
+    if (swiperArr.isBeginning) {
+      prevButton.classList.add('disabled-projects-btn');
+    }
+
+    if (swiperArr.isEnd) {
+      nextButton.classList.add('disabled-projects-btn');
+    }
+  };
+
+  if (reviewSwiperContainer && nextButton && prevButton) {
+    const ProjectSwiper = new Swiper(reviewSwiperContainer, {
+      direction: 'horizontal',
+      loop: false,
+      spaceBetween: 1000,
+      slidesPerView: 1,
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 16,
+        },
+        1440: {
+          slidesPerView: 4,
+          spaceBetween: 16,
+        },
+      },
+      navigation: {
+        nextEl: nextButton,
+        prevEl: prevButton,
+      },
+      keyboard: {
+        enabled: true,
+        onlyInViewport: true,
+      },
+      on: {
+        init: function () {
+          updateProjectButtons(this);
+          nextButton.classList.remove('disabled-projects-btn');
+        },
+        slideChangeTransitionEnd: function () {
+          updateProjectButtons(this);
+        },
+      },
+    });
+
+    updateProjectButtons(ProjectSwiper);
+    nextButton.classList.remove('disabled-projects-btn');
+  } else {
+    console.error('Swiper elements not found in the DOM');
+  }
+});
 //TODO: ================== /REVIEWS ==================
+
+//TODO: ================== WORK TOGETHER ==================
+
+//* Find elements
+const bodyEl = document.querySelector('body');
+const formEl = document.querySelector('.footer-form');
+const emailInputEl = document.querySelector('.email-input');
+const textInputEl = document.querySelector('.comment-input');
+const footerTitleEl = document.querySelector('.footer-title');
+const contactListEl = document.querySelector('.footer-contact-list');
+
+const modalBackdropEl = document.querySelector('.backdrop');
+const modalCloseBtnEl = document.querySelector('.close-modal-button');
+const modalTitleEl = document.querySelector('.modal-title');
+const modalTextEl = document.querySelector('.modal-text');
+
+//* Validate function
+const isValid = email => {
+  const pattern = /^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+  return pattern.test(email);
+};
+
+//* Function
+const onFormSubmit = async event => {
+  event.preventDefault();
+  modalCloseBtnEl.removeEventListener('click', onCloseBtnClick);
+  modalBackdropEl.removeEventListener('click', onModalBackdropClick);
+  document.removeEventListener('keydown', onEscClick);
+
+  const userEmail = emailInputEl.value.trim();
+  const userComment = textInputEl.value.trim();
+
+  try {
+    const postRequest = await axios.post(
+      'https://portfolio-js.b.goit.study/api/requests',
+      {
+        email: `${userEmail}`,
+        comment: `${userComment}`,
+      }
+    );
+
+    emailInputEl.value = '';
+    textInputEl.value = '';
+
+    disableScroll();
+    modalBackdropEl.classList.add('is-open');
+
+    modalCloseBtnEl.addEventListener('click', onCloseBtnClick);
+    modalBackdropEl.addEventListener('click', onModalBackdropClick);
+    document.addEventListener('keydown', onEscClick);
+  } catch (err) {
+    modalTitleEl.classList.add('error-title');
+    modalTitleEl.textContent = 'Error!';
+
+    modalTextEl.classList.add('error-text');
+    modalTextEl.textContent = 'Sorry something went wrong';
+
+    modalCloseBtnEl.addEventListener('click', onCloseBtnClick);
+    modalBackdropEl.addEventListener('click', onModalBackdropClick);
+    document.addEventListener('keydown', onEscClick);
+
+    modalBackdropEl.classList.add('is-open');
+  }
+};
+
+//* Add event listeners to form
+formEl.addEventListener('submit', onFormSubmit);
+
+emailInputEl.addEventListener('focus', event => {
+  footerTitleEl.classList.add('animate-title');
+});
+
+emailInputEl.addEventListener('blur', event => {
+  footerTitleEl.classList.remove('animate-title');
+});
+
+textInputEl.addEventListener('focus', event => {
+  footerTitleEl.classList.add('animate-title');
+});
+
+textInputEl.addEventListener('blur', event => {
+  footerTitleEl.classList.remove('animate-title');
+});
+
+//* Event functions
+const onCloseBtnClick = event => {
+  modalBackdropEl.classList.remove('is-open');
+  modalCloseBtnEl.removeEventListener('click', onCloseBtnClick);
+  modalBackdropEl.removeEventListener('click', onModalBackdropClick);
+  document.removeEventListener('keydown', onEscClick);
+  enableScroll();
+};
+
+const onModalBackdropClick = event => {
+  if (event.target === modalBackdropEl) {
+    modalBackdropEl.classList.remove('is-open');
+    modalCloseBtnEl.removeEventListener('click', onCloseBtnClick);
+    modalBackdropEl.removeEventListener('click', onModalBackdropClick);
+    document.removeEventListener('keydown', onEscClick);
+    enableScroll();
+  }
+};
+
+const onEscClick = event => {
+  if (event.key === 'Escape' || event.keyCode === 27) {
+    modalBackdropEl.classList.remove('is-open');
+    modalCloseBtnEl.removeEventListener('click', onCloseBtnClick);
+    modalBackdropEl.removeEventListener('click', onModalBackdropClick);
+    document.removeEventListener('keydown', onEscClick);
+    enableScroll();
+  }
+};
+
+function disableScroll() {
+  const scrollY = window.scrollY;
+  document.body.style.position = 'fixed';
+  document.body.style.top = `-${scrollY}px`;
+}
+
+function enableScroll() {
+  const scrollY = Math.abs(parseInt(document.body.style.top || '0', 10));
+  document.body.style.position = '';
+  document.body.style.top = '';
+
+  document.documentElement.classList.add('disable-scroll-animation');
+  window.scrollTo(0, scrollY);
+  document.documentElement.classList.remove('disable-scroll-animation');
+}
+//TODO: ================== /WORK TOGETHER ==================
