@@ -18,6 +18,9 @@
     <script src="https://unpkg.com/accordion-js@3.4.0/dist/accordion.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio project</title>
     <script type="module" crossorigin src="/portfolio-project/index.js"></script>
@@ -26,7 +29,7 @@
   </head>
   <body>
     <header class="page-header">
-      <div class="container header-container">
+      <div class="container header-container" data-aos="zoom-in">
         <div class="logo-wrapper">
           <img
             class="header-logo"
@@ -99,7 +102,7 @@
 
     <main>
       <section class="hero-section">
-        <div class="container hero-container">
+        <div class="container hero-container" data-aos="fade-up">
           <h1 class="page-title">
             Hello. <br />
             I’m Fullstack developer Lloyd Jefferson.
@@ -150,7 +153,7 @@
         </div>
       </section>
 
-      <section class="about-me-section">
+      <section class="about-me-section" data-aos="fade-down">
         <div class="container about-conatiner">
           <h2 class="about-me-title visually-hidden">About me</h2>
 
@@ -321,7 +324,7 @@
         </div>
       </section>
 
-      <section class="benefits-section">
+      <section class="benefits-section" data-aos="fade-right">
         <div class="container benefits-container">
           <h2 class="benefits-title">Benefits of working with me</h2>
 
@@ -395,7 +398,7 @@
         </div>
       </section>
 
-      <section class="projects-section">
+      <section class="projects-section" data-aos="fade-left">
         <div class="container projects-container">
           <h2 class="projects-title">Projects</h2>
 
@@ -515,7 +518,7 @@
         </div>
       </section>
 
-      <section class="faq-section">
+      <section class="faq-section" data-aos="zoom-in-down">
         <div class="container faq-container">
           <h2 class="faq-title">FAQ</h2>
 
@@ -1608,7 +1611,7 @@
       </section>
     </main>
 
-    <footer id="page-footer" class="page-footer">
+    <footer id="page-footer" class="page-footer" data-aos="fade-up">
       <div
         class="container-footer"
         data-aos="fade-down"
@@ -1688,5 +1691,12 @@
       </div>
     </div>
 
+
+    <script>
+      AOS.init({
+        duration: 800,
+        once: true,
+      });
+    </script>
   </body>
 </html>
