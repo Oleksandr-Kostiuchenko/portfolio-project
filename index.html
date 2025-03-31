@@ -25,7 +25,7 @@
     <title>Portfolio project</title>
     <script type="module" crossorigin src="/portfolio-project/index.js"></script>
     <link rel="modulepreload" crossorigin href="/portfolio-project/assets/vendor-Bbr-MNRw.js">
-    <link rel="stylesheet" crossorigin href="/portfolio-project/assets/index-CdzDq4xW.css">
+    <link rel="stylesheet" crossorigin href="/portfolio-project/assets/index-BfrAdPhM.css">
   </head>
   <body>
     <header class="page-header">
@@ -55,6 +55,9 @@
             <li class="nav-item">
               <a href="" class="nav-link">FAQ</a>
             </li>
+            <li class="nav-item">
+              <button class="theme-modal-btn">Theme</button>
+            </li>
           </ul>
         </nav>
 
@@ -65,6 +68,39 @@
             <use href="/portfolio-project/assets/sprite-Ri2QJPrX.svg#icon-burger"></use>
           </svg>
         </button>
+      </div>
+
+      <!-- Theme modal -->
+      <div class="menu-backdrop-theme">
+        <div class="container theme-modal-container">
+          <button class="close-modal-theme-button" type="button">
+            <svg class="svg-close-icon" width="22" height="22">
+              <use href="/portfolio-project/assets/sprite-Ri2QJPrX.svg#icon-close"></use>
+            </svg>
+          </button>
+          <h2 class="theme-modal-title">Choose a theme:</h2>
+
+          <ul class="theme-switcher-list modal-theme">
+            <li class="theme-switcher-item">
+              <button class="theme-switcher-btn red-pallette-btn-modal">
+                <img
+                  class="pallette-icon"
+                  src="/portfolio-project/assets/red-pallette-BcIi-DSy.png"
+                  alt="palette-image"
+                />
+              </button>
+            </li>
+            <li class="theme-switcher-item">
+              <button class="theme-switcher-btn blue-pallette-btn-modal">
+                <img
+                  class="pallette-icon"
+                  src="/portfolio-project/assets/blue-palette-DBfuYhbs.png"
+                  alt="palette-image"
+                />
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <!-- Mobile menu -->
@@ -92,6 +128,27 @@
               </li>
             </ul>
           </nav>
+
+          <ul class="theme-switcher-list">
+            <li class="theme-switcher-item">
+              <button class="theme-switcher-btn red-pallette-btn">
+                <img
+                  class="pallette-icon"
+                  src="/portfolio-project/assets/red-pallette-BcIi-DSy.png"
+                  alt="palette-image"
+                />
+              </button>
+            </li>
+            <li class="theme-switcher-item">
+              <button class="theme-switcher-btn blue-pallette-btn">
+                <img
+                  class="pallette-icon"
+                  src="/portfolio-project/assets/blue-palette-DBfuYhbs.png"
+                  alt="palette-image"
+                />
+              </button>
+            </li>
+          </ul>
 
           <a href="#page-footer" class="mobile-header-order-link"
             >Order the project</a
