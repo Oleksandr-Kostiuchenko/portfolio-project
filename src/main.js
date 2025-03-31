@@ -1,3 +1,77 @@
+//TODO: THEME SWITCHER
+//* Find  elements
+const redBtn = document.querySelector('.red-pallette-btn');
+const blueBtn = document.querySelector('.blue-pallette-btn');
+const body = document.body;
+
+const heroSection = document.querySelector('.hero-section');
+const mobileBackdrop = document.querySelector('.menu-backdrop');
+
+//* Load theme
+document.addEventListener('DOMContentLoaded', event => {
+  const userThemeFromLS = localStorage.getItem('user-theme');
+
+  if (userThemeFromLS === null) {
+    return;
+  }
+
+  if (userThemeFromLS === 'red') {
+    body.classList.remove('blue-theme');
+  }
+
+  if (userThemeFromLS === 'blue') {
+    body.classList.add('blue-theme');
+  }
+
+  console.log(userThemeFromLS);
+});
+
+//* Add event listeners
+redBtn.addEventListener('click', event => {
+  localStorage.setItem('user-theme', 'red');
+  body.classList.remove('blue-theme');
+});
+
+blueBtn.addEventListener('click', event => {
+  localStorage.setItem('user-theme', 'blue');
+  body.classList.add('blue-theme');
+});
+
+//TODO: /THEME SWITCHER
+
+//TODO: THEME MODAL
+//* Find elements
+const themeModalOpenBtn = document.querySelector('.theme-modal-btn');
+const themeModalBackdrop = document.querySelector('.menu-backdrop-theme');
+const themeModalCloseBtn = document.querySelector('.close-modal-theme-button');
+
+const redBtnModal = document.querySelector('.red-pallette-btn-modal');
+const blueBtnModal = document.querySelector('.blue-pallette-btn-modal');
+
+//* Modal event listeners
+themeModalOpenBtn.addEventListener('click', event => {
+  themeModalBackdrop.classList.add('is-open');
+  disableScroll();
+});
+
+themeModalCloseBtn.addEventListener('click', () => {
+  themeModalBackdrop.classList.remove('is-open');
+  enableScroll();
+});
+
+//* Theme listeners
+redBtnModal.addEventListener('click', event => {
+  localStorage.setItem('user-theme', 'red');
+  body.classList.remove('blue-theme');
+});
+
+blueBtnModal.addEventListener('click', event => {
+  localStorage.setItem('user-theme', 'blue');
+  body.classList.add('blue-theme');
+});
+
+//TODO: /THEME MODAL
+
 //TODO: ================== HEADER ==================
 //* Find elements
 const burgerBtnEL = document.querySelector('.menu-burger-btn');
@@ -455,17 +529,21 @@ const onEscClick = event => {
 
 function disableScroll() {
   const scrollY = window.scrollY;
+  const scrollbarWidth =
+    window.innerWidth - document.documentElement.clientWidth;
+
   document.body.style.position = 'fixed';
   document.body.style.top = `-${scrollY}px`;
+  document.body.style.width = `calc(100% - ${scrollbarWidth}px)`;
 }
 
 function enableScroll() {
   const scrollY = Math.abs(parseInt(document.body.style.top || '0', 10));
+
   document.body.style.position = '';
   document.body.style.top = '';
+  document.body.style.width = '';
 
-  document.documentElement.classList.add('disable-scroll-animation');
   window.scrollTo(0, scrollY);
-  document.documentElement.classList.remove('disable-scroll-animation');
 }
 //TODO: ================== /WORK TOGETHER ==================
