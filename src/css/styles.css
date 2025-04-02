@@ -190,12 +190,26 @@ html {
 /* ================= HEADER ================= */
 /* Mobile */
 header {
-  position: absolute;
+  position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 10;
 }
+
+.page-header {
+  transition: backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+.page-header.scrolled {
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* .page-header.hidden-header {
+  display: none;
+  position: absolute;
+} */
 
 .header-container {
   display: flex;
@@ -345,7 +359,7 @@ header {
   display: flex;
 
   position: absolute;
-  top: 80px;
+  top: 65px;
   left: 50%;
   transform: translate(-50%, 0%);
 
@@ -356,10 +370,12 @@ header {
   transition: opacity 250ms linear, visibility 250ms linear;
 }
 
-.header-nav.is-shown {
-  visibility: visible;
-  opacity: 1;
-  pointer-events: auto;
+@media screen and (min-width: 768px) {
+  .header-nav.is-shown {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
 
 .header-nav-list {
@@ -2190,5 +2206,11 @@ html {
 
 .theme-modal-title {
   margin-bottom: 30px;
+}
+
+.scroll-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
 }
 /* ================= /Theme Switcher ================= */

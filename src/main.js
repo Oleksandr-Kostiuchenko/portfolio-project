@@ -39,6 +39,26 @@ blueBtn.addEventListener('click', event => {
 
 //TODO: /THEME SWITCHER
 
+//TODO: SCROLL
+//* Find elements
+const header = document.querySelector('.page-header');
+
+//* Add event listener
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleBlur = () => {
+    if (window.scrollY > 0) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  };
+
+  window.addEventListener('scroll', toggleBlur);
+  toggleBlur();
+});
+
+//TODO: /SCROLL
+
 //TODO: THEME MODAL
 //* Find elements
 const themeModalOpenBtn = document.querySelector('.theme-modal-btn');
