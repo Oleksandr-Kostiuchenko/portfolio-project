@@ -25,7 +25,7 @@
     <title>Portfolio project</title>
     <script type="module" crossorigin src="/portfolio-project/index.js"></script>
     <link rel="modulepreload" crossorigin href="/portfolio-project/assets/vendor-Bbr-MNRw.js">
-    <link rel="stylesheet" crossorigin href="/portfolio-project/assets/index-BZ8ZwlTO.css">
+    <link rel="stylesheet" crossorigin href="/portfolio-project/assets/index-Ex2jv9UZ.css">
   </head>
   <body>
     <header class="page-header">
@@ -1760,7 +1760,42 @@
       </div>
     </div>
 
-    <button class="scroll-btn">Scroll</button>
+    <button class="scroll-btn">
+      <img class="arrow-icon" src="/portfolio-project/assets/arrow-BncL3WQ_.png" alt="" />
+    </button>
+
+    <script>
+      (function () {
+        if (!window.chatbase || window.chatbase('getState') !== 'initialized') {
+          window.chatbase = (...arguments) => {
+            if (!window.chatbase.q) {
+              window.chatbase.q = [];
+            }
+            window.chatbase.q.push(arguments);
+          };
+          window.chatbase = new Proxy(window.chatbase, {
+            get(target, prop) {
+              if (prop === 'q') {
+                return target.q;
+              }
+              return (...args) => target(prop, ...args);
+            },
+          });
+        }
+        const onLoad = function () {
+          const script = document.createElement('script');
+          script.src = 'https://www.chatbase.co/embed.min.js';
+          script.id = 'knZ0L17WhdgHL5bRpz3RV';
+          script.domain = 'www.chatbase.co';
+          document.body.appendChild(script);
+        };
+        if (document.readyState === 'complete') {
+          onLoad();
+        } else {
+          window.addEventListener('load', onLoad);
+        }
+      })();
+    </script>
 
     <script>
       AOS.init({
