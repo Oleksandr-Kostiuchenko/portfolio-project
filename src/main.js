@@ -42,19 +42,26 @@ blueBtn.addEventListener('click', event => {
 //TODO: SCROLL
 //* Find elements
 const header = document.querySelector('.page-header');
+const scrollBtn = document.querySelector('.scroll-btn');
 
 //* Add event listener
 document.addEventListener('DOMContentLoaded', () => {
   const toggleBlur = () => {
     if (window.scrollY > 0) {
       header.classList.add('scrolled');
+      scrollBtn.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
+      scrollBtn.classList.remove('scrolled');
     }
   };
 
   window.addEventListener('scroll', toggleBlur);
   toggleBlur();
+});
+
+scrollBtn.addEventListener('click', event => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
 //TODO: /SCROLL
